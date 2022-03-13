@@ -3,6 +3,8 @@ import { mergeMap, map } from 'rxjs/operators';
 
 
 ///不会被打断
+
+//interval会每隔一段时间，打印角标
 const letters = of('a', 'b', 'c');
 const result = letters.pipe(
   mergeMap(x => interval(1000).pipe(map(i => x+i))),
